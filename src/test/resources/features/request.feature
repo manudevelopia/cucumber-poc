@@ -3,12 +3,14 @@ Feature: Request
   I want to make a get request
 
   Background:
-    Given url calculator
+    Given url https://jsonplaceholder.typicode.com
 
-  Scenario: Add two numbers -2 & 3
+  Scenario: Get all users
+    Given path /users
     When method get
-    Then status
+    Then status 200
 
-  Scenario: Add two numbers 10 & 15
+  Scenario: Get user 1
+    Given path /users/1
     When method get
-    Then status 1
+    Then status 200
