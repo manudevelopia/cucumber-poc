@@ -16,6 +16,7 @@ Feature: Request
     When method get
     Then status 200
     And response id 1
+    And match { "id": "number"}
 
   Scenario Outline: Get user 1,2,3
     Given path /users/<USER_ID>

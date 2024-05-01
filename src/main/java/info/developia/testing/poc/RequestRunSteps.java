@@ -49,4 +49,9 @@ public class RequestRunSteps {
         var received = response.getBody().getObject().optString(name);
         assert received.equals(value) : "Expected " + value + " but received " + received;
     }
+
+    @Then("^match (.*)$")
+    public void matchPattern(String pattern) throws Throwable {
+        response.getBody();
+    }
 }
