@@ -4,6 +4,8 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import kong.unirest.HttpResponse;
+import kong.unirest.JsonNode;
 import kong.unirest.Unirest;
 
 public class RequestRunSteps {
@@ -13,6 +15,7 @@ public class RequestRunSteps {
 
     private Request request;
     private int statusCode;
+    private HttpResponse<JsonNode> response;
 
     @Before
     private void init() {
@@ -31,12 +34,19 @@ public class RequestRunSteps {
 
     @When("^method (-?\\w+)")
     public void testAdd(String method) throws Throwable {
-        var response = Unirest.get(url + path).asString();
+        response = Unirest.get(url + path).asJson();
         statusCode = response.getStatus();
     }
 
     @Then("^status (-?\\d+)$")
     public void validateResult(int statusCode) throws Throwable {
         assert this.statusCode == statusCode : "ooooohhhh " + this.statusCode;
+    }
+
+    @Then("^response (.*) (.*)$")
+    public void validateResult(String name, String value) throws Throwable {
+        response.getBody();
+        var received = response.getBody().getObject().optString(name);
+        assert received.equals(value) : "Expected " + value + " but received " + received;
     }
 }

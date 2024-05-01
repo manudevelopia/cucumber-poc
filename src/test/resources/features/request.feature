@@ -14,6 +14,7 @@ Feature: Request
     Given path /users/1
     When method get
     Then status 200
+    And response id 1
 
   Scenario Outline: Get user 1,2,3
     Given path /users/<USER_ID>
