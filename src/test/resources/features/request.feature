@@ -1,6 +1,7 @@
 Feature: Request
   As a user
-  I want to make a get request
+  I want to make a get request to retrieve all users or just one
+  and validate returned result
 
   Background:
     Given url https://jsonplaceholder.typicode.com
