@@ -1,4 +1,4 @@
-package info.developia.testing.poc;
+package info.developia.testing.poc.calculator;
 
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
