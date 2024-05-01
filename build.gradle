@@ -10,12 +10,12 @@ repositories {
 
 dependencies {
     implementation 'io.cucumber:cucumber-java:7.17.0'
-    implementation 'com.konghq:unirest-java:3.14.5'
     implementation 'io.cucumber:cucumber-junit:7.17.0'
+    implementation 'com.konghq:unirest-java:3.14.5'
 
     testImplementation 'org.codehaus.groovy:groovy:3.0.13'
     testImplementation 'org.spockframework:spock-core:2.2-groovy-3.0'
-    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.junit.vintage:junit-vintage-engine'
 }
 
 tasks.named('test') {
