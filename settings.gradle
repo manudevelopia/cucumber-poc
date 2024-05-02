@@ -1,4 +1,3 @@
 rootProject.name = 'cucumber-poc'
 include 'library'
 include 'app'
-
