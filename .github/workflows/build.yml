@@ -26,3 +26,8 @@ jobs:
         run: ./gradlew build
       - name: Test
         run: ./gradlew test
+      - name: Report
+        id: html_preview
+        uses: pavi2410/html-preview-action@v2
+        with:
+          html_file: 'app/target/cucumber-reports/report.html'
