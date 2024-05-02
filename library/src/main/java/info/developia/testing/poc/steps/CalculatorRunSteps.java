@@ -1,5 +1,6 @@
-package info.developia.testing.poc.calculator;
+package info.developia.testing.poc.steps;
 
+import info.developia.testing.poc.calculator.Calculator;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
